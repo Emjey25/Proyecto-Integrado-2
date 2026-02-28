@@ -1,0 +1,135 @@
+[dotenv@17.3.1] injecting env (2) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+✅ ¡Conexión exitosa a la base de datos de películas!
+✅ Servidor corriendo en el puerto 4000
+ValidationError: Media validation failed: sinopsis: Path `sinopsis` is required.
+    at Document.invalidate (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_m[32m[nodemon] restarting child process[39m
+at validatePath (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/document.js:3192:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async model.$__validate (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/document.js:3133:3)
+    at async model.validate (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/document.js:2702:5)
+    at async model.validateBeforeSavePreSave (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/plugins/validateBeforeSave.js:39:5)
+    at async Kareem.execPre (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/kareem/index.js:70:24)
+    at async model.$__save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:376:5)
+    at async model.save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:642:5) {
+  errors: {
+    sinopsis: ValidatorError: Path `sinopsis` is required.
+        at SchemaString.doValidate (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/schemaType.js:1424:13)
+        at validatePath (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/document.js:3184:24)
+        at model.$__validate (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/document.js:3130:21)
+        at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+        at async model.validate (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/document.js:2702:5)
+        at async model.validateBeforeSavePreSave (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/plugins/validateBeforeSave.js:39:5)
+        at async Kareem.execPre (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/kareem/index.js:70:24)
+        at async model.$__save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:376:5)
+        at async model.save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:642:5)
+        at async crearMedia (file:///home/luneskanewton/Developer/Proyecto%20Integrado%202/Backend/controllers/mediaController.js:7:9) {
+      properties: [Object],
+      kind: 'required',
+      path: 'sinopsis',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Media validation failed'
+}
+SyntaxError: Expected ',' or '}' after property value in JSON at position 253 (line 5 column 3)
+    at JSON.parse (<anonymous>)
+    at parse (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/body-parser/lib/types/json.js:72:19)
+    at /home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/body-parser/lib/read.js:162:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/raw-body/index.js:238:16)
+    at done (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:519:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+MongoServerError: E11000 duplicate key error collection: test.media index: urlPelicula_1 dup key: { urlPelicula: "https://www.youtube.com/watch?v=bPitCGNTe0o" }
+    at InsertOneOperation.handleOk (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/insert.js:51:19)
+    at tryOperation (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:216:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeOperation (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:80:16)
+    at async Collection.insertOne (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:154:16)
+    at async model.$__save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:405:16)
+    at async model.save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:642:5)
+    at async crearMedia (file:///home/luneskanewton/Developer/Proyecto%20Integrado%202/Backend/controllers/mediaController.js:7:9) {
+  errorLabelSet: Set(0) {},
+  errorResponse: {
+    index: 0,
+    code: 11000,
+    errmsg: 'E11000 duplicate key error collection: test.media index: urlPelicula_1 dup key: { urlPelicula: "https://www.youtube.com/watch?v=bPitCGNTe0o" }',
+    keyPattern: { urlPelicula: 1 },
+    keyValue: { urlPelicula: 'https://www.youtube.com/watch?v=bPitCGNTe0o' }
+  },
+  index: 0,
+  code: 11000,
+  keyPattern: { urlPelicula: 1 },
+  keyValue: { urlPelicula: 'https://www.youtube.com/watch?v=bPitCGNTe0o' }
+}
+MongoServerError: E11000 duplicate key error collection: test.media index: serial_1 dup key: { serial: "MOV-001" }
+    at InsertOneOperation.handleOk (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/insert.js:51:19)
+    at tryOperation (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:216:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeOperation (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:80:16)
+    at async Collection.insertOne (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:154:16)
+    at async model.$__save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:405:16)
+    at async model.save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:642:5)
+    at async crearMedia (file:///home/luneskanewton/Developer/Proyecto%20Integrado%202/Backend/controllers/mediaController.js:7:9) {
+  errorLabelSet: Set(0) {},
+  errorResponse: {
+    index: 0,
+    code: 11000,
+    errmsg: 'E11000 duplicate key error collection: test.media index: serial_1 dup key: { serial: "MOV-001" }',
+    keyPattern: { serial: 1 },
+    keyValue: { serial: 'MOV-001' }
+  },
+  index: 0,
+  code: 11000,
+  keyPattern: { serial: 1 },
+  keyValue: { serial: 'MOV-001' }
+}
+MongoServerError: E11000 duplicate key error collection: test.media index: urlPelicula_1 dup key: { urlPelicula: "https://www.youtube.com/watch?v=bPitCGNTe0o" }
+    at InsertOneOperation.handleOk (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/insert.js:51:19)
+    at tryOperation (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:216:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeOperation (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:80:16)
+    at async Collection.insertOne (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:154:16)
+    at async model.$__save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:405:16)
+    at async model.save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:642:5)
+    at async crearMedia (file:///home/luneskanewton/Developer/Proyecto%20Integrado%202/Backend/controllers/mediaController.js:7:9) {
+  errorLabelSet: Set(0) {},
+  errorResponse: {
+    index: 0,
+    code: 11000,
+    errmsg: 'E11000 duplicate key error collection: test.media index: urlPelicula_1 dup key: { urlPelicula: "https://www.youtube.com/watch?v=bPitCGNTe0o" }',
+    keyPattern: { urlPelicula: 1 },
+    keyValue: { urlPelicula: 'https://www.youtube.com/watch?v=bPitCGNTe0o' }
+  },
+  index: 0,
+  code: 11000,
+  keyPattern: { urlPelicula: 1 },
+  keyValue: { urlPelicula: 'https://www.youtube.com/watch?v=bPitCGNTe0o' }
+}
+MongoServerError: E11000 duplicate key error collection: test.media index: urlPelicula_1 dup key: { urlPelicula: "https://www.youtube.com/watch?v=bPitCGNTe0o" }
+    at InsertOneOperation.handleOk (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/insert.js:51:19)
+    at tryOperation (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:216:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeOperation (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:80:16)
+    at async Collection.insertOne (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/node_modules/mongodb/lib/collection.js:154:16)
+    at async model.$__save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:405:16)
+    at async model.save (/home/luneskanewton/Developer/Proyecto Integrado 2/Backend/node_modules/mongoose/lib/model.js:642:5)
+    at async crearMedia (file:///home/luneskanewton/Developer/Proyecto%20Integrado%202/Backend/controllers/mediaController.js:7:9) {
+  errorLabelSet: Set(0) {},
+  errorResponse: {
+    index: 0,
+    code: 11000,
+    errmsg: 'E11000 duplicate key error collection: test.media index: urlPelicula_1 dup key: { urlPelicula: "https://www.youtube.com/watch?v=bPitCGNTe0o" }',
+    keyPattern: { urlPelicula: 1 },
+    keyValue: { urlPelicula: 'https://www.youtube.com/watch?v=bPitCGNTe0o' }
+  },
+  index: 0,
+  code: 11000,
+  keyPattern: { urlPelicula: 1 },
+  keyValue: { urlPelicula: 'https://www.youtube.com/watch?v=bPitCGNTe0o' }
+}
